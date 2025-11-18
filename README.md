@@ -1,4 +1,4 @@
-# 🛡️ Sentinel Dashboard: Your Unified Cyber Hub
+# 🛡️ CyberSecure Web Suite: Your Unified Cyber Hub
 
 ## 🌟 Project Overview
 
