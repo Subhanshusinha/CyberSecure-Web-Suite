@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SecureVerse</title>
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- Optional Bootstrap (for layout/utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/frontend/css/styles.css" />
+
+  <!-- CSS for dashboard -->
+  <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+<body>
+  <div id="app">
+    <nav class="sidebar" aria-label="Main navigation">
+      <h2>SecureVerse</h2>
+      <div id="nav-links">
+        <div class="nav-link active" data-section="dashboard">
+          <span class="material-icons">dashboard</span> Dashboard
+        </div>
+        <div class="nav-link" data-section="phishing">
+          <span class="material-icons">link</span> Phishing Detection
+        </div>
+        <div class="nav-link" data-section="password">
+          <span class="material-icons">vpn_key</span> Password Strength
+        </div>
+        <div class="nav-link" data-section="news">
+
+          <span class="material-icons">article</span> Cybersecurity News
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1>SecureVerse</h1>
+      </header>
+
+      <!-- <section id="dashboard-section" data-section-content> -->
+      <section id="dashboard-section" data-section-content style="display:none;">
+          <h2>Cyber Safety Hub</h2>
+
+          <!-- Simple Mode Toggle -->
+          <div class="mode-toggle">
+            <label class="switch">
+              <input type="checkbox" id="simple-mode-toggle">
+              <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Simple Mode</span>
+          </div>
+
+          <!-- Daily Scam Alert -->
+          <div class="card alert-card">
+            <h3>🔔 Fraud of the Day</h3>
+            <p id="daily-scam-text"></p>
+            <button id="play-alert-audio" class="btn primary">🔊 Listen</button>
+          </div>
+
+          <!-- Visual Safety Cards -->
+          <h3>Essential Safety Tips</h3>
+          <div class="visual-cards" id="visual-cards-container"></div>
+
+          <!-- Scam Examples -->
+          <h3>Spot the Fake</h3>
+          <div id="scam-example" class="card example-card"></div>
+
+          <!-- Interactive Quiz -->
+          <h3>Quick Quiz</h3>
+          <div class="card quiz-card">
+            <p id="quiz-question"></p>
+            <div id="quiz-options"></div>
+            <p id="quiz-result" class="quiz-result"></p>
+          </div>
+
+          <!-- Precaution Checklist -->
+          <h3>Daily Precaution Checklist</h3>
+          <ul class="checklist" id="safety-checklist"></ul>
+</section>
+
+
+<!-- //phishing section -->
+      <section id="phishing-section" data-section-content style="display:none;">
+        <h2>Phishing Website Detection</h2>
+        <form id="phishing-form">
+          <label for="url-input">Enter URL:</label><br />
+          <input type="url" id="url-input" placeholder="https://example.com" required />
+          <button type="submit">Check URL</button>
+        </form>
+      </section>
+
+      <section id="password-section" data-section-content style="display:none;">
+        <h2>Password Strength Checker</h2>
+        <label for="password-input">Enter Password:</label><br />
+        <input type="password" id="password-input" placeholder="Type a password" />
+        <div class="strength-meter">
+          <div class="strength-meter-fill" id="strength-meter-fill"></div>
+        </div>
+        <div id="strength-text">Strength: <span id="strength-label">—</span></div>
+        <ul class="checklist" id="password-checklist">
+          <li id="length-check"><span class="material-icons">close</span> Minimum 8 characters</li>
+          <li id="uppercase-check"><span class="material-icons">close</span> One uppercase letter</li>
+          <li id="lowercase-check"><span class="material-icons">close</span> One lowercase letter</li>
+          <li id="number-check"><span class="material-icons">close</span> One number</li>
+          <li id="symbol-check"><span class="material-icons">close</span> One special symbol</li>
+        </ul>
+      </section>
+
+    <section id="news-section" data-section-content style="display:none;">
+      
+      <h2>Cyber Safety News</h2>
+
+      <!-- The 2 article links MUST be here (INSIDE this section) -->
+      <div class="news-links">
+          <a href="news/news1.html" class="btn primary">Fake Courier Scam →</a>
+          <br><br>
+          <a href="news/news2.html" class="btn primary">Fake KYC Scam →</a>
+      </div>
+
+    </section>
+
+    </main>
+  </div>
+
+  <!-- Centered Dialog -->
+  <div class="overlay" id="overlay">
+    <div class="dialog">
+      <h3 id="dialog-title">Phishing Check</h3>
+      <p id="dialog-message"></p>
+      <button id="dialog-close" class="btn secondary">Close</button>
+    </div>
+  </div>
+
+  <script src="/frontend/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
